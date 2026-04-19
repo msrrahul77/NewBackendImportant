@@ -19,7 +19,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
+app.get("/", (req, res) => {
+    res.status(200).json("Hello")
+})
 app.use("/services", serviceRoute)
 app.use("/price",PriceRouter)
 app.use("/team",TeamRouter)
