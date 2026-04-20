@@ -9,6 +9,7 @@ import TeamRouter from "../modules/TeamData/TeamRoute.js"
 
 // import  server  from "../server/server.js"
 
+const port=config.PORT || 8000
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
 app.use("/services", serviceRoute)
 app.use("/price",PriceRouter)
 app.use("/team",TeamRouter)
-// app.listen(config.PORT, () => {
-//     server()
-// console.log(`Server is Running ${config.PORT}`)
-// })
+app.listen(port, () => {
+    server()
+console.log(`Server is Running ${port}`)
+})
