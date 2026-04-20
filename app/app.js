@@ -15,7 +15,7 @@ app.use(express.json())
 // Parse JSON bodies
 app.use(bodyParser.json());
 
-// Parse URL-encoded bodies (for forms)
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.use("/services", serviceRoute)
 app.use("/price",PriceRouter)
 app.use("/team",TeamRouter)
-app.listen(config.PORT, () => {
-    server()
-console.log(`Server is Running ${config.PORT}`)
-})
+// app.listen(config.PORT, () => {
+//     server()
+// console.log(`Server is Running ${config.PORT}`)
+// })
